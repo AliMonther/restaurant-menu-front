@@ -14,6 +14,7 @@ import "primeicons/primeicons.css";
 const app = createApp(App)
     .use(createPinia())
     .use(router)
+    .use(PrimeVue)
     .use(VueSweetalert2);
 
 app.mount("#app");
