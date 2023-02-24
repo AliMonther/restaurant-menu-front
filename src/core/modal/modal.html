@@ -1,0 +1,14 @@
+<Dialog @hide="close()" :visible=" canDisplay() " modal :closable="true" closeIcon="pi pi-times"
+        :style="{ width: modalWidth ,height: modalHeight , borderRadius:borderRadius}">
+        <div class="header-dialog" @click="close()">
+                <i class="pi pi-times"></i>
+        </div>
+        <component :is="props.component" v-bind="props.componentProps" @getValue="getValueFromComponent($event)">
+
+        </component>
+        <slot></slot>
+</Dialog>
+
+<sxwButton v-if="showBtn" @click="changeState(true)" :label="btnLabel" :icon="btnIcon" :iconPosition="btnIconPosition"
+        :size="btnSize" :background="btnBackground" :color="btnColor" :hoverBackground="btnHoverBackground"
+        :hoverColor="btnHoverColor" :borderRadius="btnBorderRadius" :borderRadiusUnit="btnBorderRadiusUnit"></sxwButton>

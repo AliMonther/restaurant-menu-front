@@ -1,0 +1,49 @@
+<div class="register-wrapper">
+
+    <div class="register-title">
+        <h1> Create new account </h1>
+    </div>
+
+    <div class="register-form">
+        <div class="register-form-input register-form-first-name">
+            <InputText placeHolder="first name"></InputText>
+
+        </div>
+
+        <div class="register-form-input register-form-last-name">
+            <InputText placeHolder="last name"></InputText>
+
+        </div>
+
+        <div class="register-form-input register-form-email">
+            <InputText type="email" placeHolder="email"></InputText>
+
+        </div>
+
+        <div class="register-form-input register-form-password">
+            <InputPassword placeHolder="password"></InputPassword>
+
+        </div>
+
+        <div>
+            <Button
+                    class="action-button"
+                    label="submit"
+                    icon="pi pi-user-plus"
+                    iconPos="right">
+
+            </Button>
+
+            <p>you already have an account ? </p>
+
+            <router-link to="/login">
+
+                <span >login</span>
+            </router-link>
+
+        </div>
+
+
+    </div>
+
+</div>

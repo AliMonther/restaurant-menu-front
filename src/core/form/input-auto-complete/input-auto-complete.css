@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.input-auto-complete-item-field {
+    text-align: start;
+    padding-bottom: 18px;
+    width: 100%;
+    font: normal normal normal 16px/25px Poppins;
+}
+
+.p-chip .p-chip-text {
+    margin-top: 1px !important;
+    margin-bottom: 1px !important;
+    font-size: 14px !important;
+}
+
+.input-auto-complete-item-container-wrapper .p-autocomplete-dd .p-autocomplete-dropdown:hover {
+    background: #F2DE31
+}
+
+.p-autocomplete {
+    width: 100%;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    position: relative;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 2px #00000029;
+    border: 0.5px solid #DBDDE180;
+    opacity: 1;
+    border-radius: 12px;
+}
+
+.p-autocomplete-input {
+    width: 100% !important;
+}
+
+.input-auto-complete-item-container-wrapper .p-inputtext::placeholder {
+    font-family: Poppins, serif;
+}
+
+span.p-autocomplete-token-label {
+    /* font-size: 30px; */
+}
+
+.autocomplete {
+    box-shadow: none;
+}
+
+.p-autocomplete .p-autocomplete-multiple-container .p-autocomplete-input-token {
+    padding: 0px !important;
+}
+
+.autocomplete {
+    height: 36px !important;
+}
+
+.input-auto-complete-item-container-wrapper .p-inputtext {
+    width: 100%;
+    border: 0.5px solid #DBDDE180;
+    border-right: none;
+}
+/*.p-autocomplete .p-autocomplete-multiple-container .p-autocomplete-token{*/
+/*    display: none;*/
+/*}*/
+.input-auto-complete-item-container-wrapper .p-inputtext:enabled:hover {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 2px #00000029;
+    border: 0.5px solid #DBDDE180;
+}
+
+
+.input-auto-complete-item-container-wrapper .p-autocomplete-multiple:hover {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 2px #00000029;
+    border: 0.5px solid #DBDDE180;
+}
+
+
+
+.input-auto-complete-item-container-wrapper .p-inputtext:enabled:focus {
+    box-shadow: inset 0 0 0 1px #F2DE31, inset 0 0 0 1px #F2DE31, inset 0 0 0 1px #F2DE31, inset 0 0 0 1px #F2DE31;
+    outline: 0 none;
+    border-color: #F2DE31;
+}
+
+
+.p-autocomplete.p-invalid>.p-inputtext:enabled:focus {
+    box-shadow: inset 0 0 0 1px #f2de31, inset 0 0 0 1px #f2de31, inset 0 0 0 1px #f2de31, inset 0 0 0 1px #f2de31;
+}
+
+.p-autocomplete-multiple.p-invalid>.p-inputtext:enabled:focus {
+    box-shadow: inset 0 0 0 1px #f2de31, inset 0 0 0 1px #f2de31, inset 0 0 0 1px #f2de31, inset 0 0 0 1px #f2de31;
+}
+
+
+.input-auto-complete-item-container-wrapper .p-inputtext:enabled:focus {
+    box-shadow: inset 0 0 0 1px #f2de31, inset 0 0 0 1px #f2de31, inset 0 0 0 1px #f2de31, inset 0 0 0 1px #f2de31;
+    outline: 0 none;
+    border-color: #F2DE31;
+}
+
+.error-msg {
+    color: red;
+    margin-left: 1%;
+    font-family: Poppins, serif;
+    font-size: 12px;
+
+
+}
+
+.input-auto-complete-item-container-wrapper .p-autocomplete-dd .p-autocomplete-dropdown {
+    color: black;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 2px 0px #00000029;
+    border: 0.5px solid #DBDDE180;
+    border-left: none;
+
+}
+
+.input-auto-complete-item-container-wrapper .p-autocomplete-dd .p-autocomplete-dropdown:hover {}
+
+.selected-items-container {
+    width: 100%;
+
+    max-height: 150px;
+    overflow: auto;
+}
+
+.selected-chip-item {
+    background: #f2de31 !important;
+    margin: 0.1%;
+    font-size: 13px;
+    font-family: Poppins, serif;
+
+}

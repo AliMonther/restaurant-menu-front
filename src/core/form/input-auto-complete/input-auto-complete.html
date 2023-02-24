@@ -1,0 +1,48 @@
+<div class="input-auto-complete-item-field">
+
+    <div v-if="label" class="input-auto-complete-label-wrapper">
+
+        <span class="input-auto-complete-label">{{label}}</span><br>
+
+    </div>
+
+    <div class="input-auto-complete-item-container-wrapper">
+
+        <AutoComplete
+                class="autocomplete"
+                dropdown
+                v-model="selectedOption"
+                optionDisabled="disableSelect"
+                :multiple="multiple"
+                :suggestions="filteredOptionsBasic"
+                :optionLabel="optionLabel"
+                :placeholder="selectedOption && selectedOption.length <= 0 ? placeHolder : '' "
+                :class="{'p-invalid':vValid && submitted}"
+                @item-select="addToSelectedItems($event)"
+                @item-unselect="removeFromSelectedItems($event , 'withoutChips')"
+                @update:modelValue="changeValue($event)"
+                @complete="searchInOptions($event)"
+                @blur="focus()"
+                >
+
+        </AutoComplete>
+        <div class="selected-items-container" v-if="showSelectedItemsAsChips">
+
+            <span v-for="item in selectedItems" :id="item[searchId]" :key="item[searchId]">
+
+                <Chip
+                        class="selected-chip-item"
+                        :id="item[searchId]"
+                        :label="item[optionLabel]"
+                        removable
+                        @remove="removeFromSelectedItems(item[searchId] , 'withChips')">
+
+                </Chip>
+
+            </span>
+
+        </div>
+
+    </div>
+
+</div>

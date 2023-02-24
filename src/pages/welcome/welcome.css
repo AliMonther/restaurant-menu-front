@@ -1,0 +1,14 @@
+.welcome-actions{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+
+}
+
+.action-button{
+    background: #6bafff !important;
+}
+
+.action-button:hover{
+    background: #3d82ff !important;
+}

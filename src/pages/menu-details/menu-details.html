@@ -1,0 +1,36 @@
+<div class="menu-details-wrapper">
+    <div class="menu-items">
+<!--        <Menubar :model="items"></Menubar>-->
+        <Menubar :model="items">
+
+            <template #item="{item}">
+
+                <div class="menu-action add-category-button">
+                    <a
+                            @click="openModal(item.identifier)"
+                            :href="item.url">{{item.label}}
+                    </a>
+                </div>
+
+            </template>
+
+            <template #end>
+
+                <Button
+                        class="action-button"
+                        icon="pi pi-sign-out"
+                        iconPos="right">
+                </Button>
+
+            </template>
+
+        </Menubar>
+
+    </div>
+
+</div>
+
+<modal modalWidth="50%" modalHeight="45%" :component="AddCategory" :showBtn="false" :identifier="openCategoryModalIdentifier"></modal>
+<modal modalWidth="50%" modalHeight="45%" :component="AddItem" :showBtn="false" :identifier="openItemModalIdentifier"></modal>
+
+
