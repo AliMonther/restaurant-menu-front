@@ -1,0 +1,37 @@
+<div class="input-text-item-field">
+
+    <div class="input-text-item-wrapper">
+
+        <div v-if="label" class="input-text-label-wrapper">
+
+            <span class="input-text-label">{{label}}</span><br>
+
+        </div>
+
+        <div class="input-text-item-container-wrapper">
+
+            <span class="input-text-item-container" :class="className">
+
+                <InputText :type="type"
+                    :style="[readOnly === 'true' ? readOnlyProps : null ,{  borderRadius:borderRadius+borderRadiusUnit}   ]"
+                    :class="[{'p-invalid' : vValid && submitted} , size]" v-model="textValue" :placeholder=placeHolder
+                    class="input-text" @keyup.enter="(evt) => keyUp(evt)" @blur="(evt) => blur(evt)"
+                    @update:modelValue="changeValue($event)">
+
+                </InputText>
+
+                <i :v-if="icon" class="pi" :class="icon"
+                    :style="{fontSize : iconSize + iconSizeUnit , fontWeight : iconWeight , color: iconColor , background : iconBackground}" />
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <span class="error-msg" v-if="error?.$error">
+        {{error?.$errors[0]?.$message }}
+    </span>
+
+
+</div>

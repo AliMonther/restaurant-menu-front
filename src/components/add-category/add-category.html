@@ -1,0 +1,62 @@
+<div class="add-category-wrapper">
+    <div class="add-category-title">
+
+        <h2>Fill category info</h2>
+
+    </div>
+
+    <div class="add-category-form">
+
+        <div class="add-category-form-input add-category-form-name">
+            <InputText
+                    placeHolder="category name"
+                    :error="validator.name"
+                    :submitted="submitted"
+                    :vValid="validator.name.$invalid"
+                    @getValue="($event)=> {updateState('name', $event)}"
+            ></InputText>
+        </div>
+
+        <div class="add-category-form-input add-category-form-parent">
+            <DropdownInput
+                    placeHolder="parent"
+                    optionLabel="name"
+                    :value="state.parent"
+                    :options="categories"
+                    :error="validator.parent"
+                    :submitted="submitted"
+                    :vValid="validator.parent.$invalid"
+                    @getValue="($event)=> {updateState('parent', $event)}"
+            ></DropdownInput>
+        </div>
+
+        <div class="add-category-form-input add-category-form-items">
+            <AuthCompleteInput
+                    :showSelectedItemsAsChips="true"
+                    placeHolder="items"
+                    :options="items"
+                    :multiple="true"
+                    optionLabel="name"
+                    searchId="id"
+                    :value="state.selectedItems"
+                    :error="validator.selectedItems"
+                    :submitted="submitted"
+                    :vValid="validator.selectedItems.$invalid"
+                    @allSelectedItems=" ($event)=> { updateState('selectedItems', $event)}"
+            ></AuthCompleteInput>
+        </div>
+
+        <div class="add-category-form-input add-category-form-actions">
+            <Button
+                    class="action-button"
+                    label="add "
+                    icon="pi pi-plus"
+                    iconPos="right" @click="addCategory()">
+
+            </Button>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,32 @@
+.p-dialog {
+    border-radius: 12px;
+
+}
+
+.header-dialog {
+    width: 100% !important;
+    display: flex !important;
+    background: #ffffff00 !important;
+    color: rgba(0, 0, 0) !important;
+    padding: 1rem !important;
+    justify-content: flex-end !important;
+    height: 45px !important;
+    z-index: 9999999 !important;
+    position: fixed !important;
+}
+
+.p-dialog .p-dialog-header {
+    display: none !important;
+
+}
+
+.p-dialog .p-dialog-content {
+    height: 100%;
+    border-radius: 21px !important;
+    padding: 0px !important;
+}
+
+.p-dialog {
+    border-radius: 18px !important;
+}
+

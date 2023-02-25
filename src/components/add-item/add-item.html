@@ -1,0 +1,69 @@
+<div class="add-item-wrapper">
+    <div class="add-item-title">
+
+        <h2>Fill item info</h2>
+
+    </div>
+
+    <div class="add-item-form">
+
+        <div class="add-item-form-input add-item-form-name">
+            <span class="required-filed-hint">*</span>
+            <InputText
+                    placeHolder="item name"
+                    :value="state.name"
+                    :error="validator.name"
+                    :submitted="submitted"
+                    :vValid="validator.name.$invalid"
+                    @getValue="($event)=> {updateState('name', $event)}"
+            >
+
+            </InputText>
+        </div>
+
+        <div class="add-item-form-input add-item-form-price">
+            <span class="required-filed-hint">*</span>
+            <InputText
+                    type='number'
+                    placeHolder="item price"
+                    :value="state.price"
+                    :error="validator.price"
+                    :submitted="submitted"
+                    :vValid="validator.price.$invalid"
+                    @getValue="($event)=> {updateState('price', $event)}"
+            >
+
+            </InputText>
+        </div>
+
+        <div class="add-item-form-input add-item-form-items">
+            <span class="required-filed-hint">*</span>
+            <AuthCompleteInput
+                    :showSelectedItemsAsChips="true"
+                    placeHolder="select categories"
+                    :options="categories"
+                    :multiple="true"
+                    optionLabel="name"
+                    searchId="id"
+                    :value="state.selectedCategories"
+                    :error="validator.selectedCategories"
+                    :submitted="submitted"
+                    :vValid="validator.selectedCategories.$invalid"
+                    @allSelectedItems=" ($event)=> { updateState('selectedCategories', $event)}"
+            ></AuthCompleteInput>
+        </div>
+
+        <div class="add-item-form-input add-item-form-actions">
+            <Button
+                    class="action-button"
+                    label="add "
+                    icon="pi pi-plus"
+                    iconPos="right" @click="addItem()">
+
+            </Button>
+
+        </div>
+
+    </div>
+
+</div>

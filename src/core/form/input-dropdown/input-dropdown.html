@@ -1,0 +1,34 @@
+
+<div class="input-drop-down-item-field">
+
+    <div class="input-drop-down-label-wrapper">
+
+        <span class="input-drop-down-label">{{label}}</span><br>
+
+    </div>
+    <div class="input-drop-down-item-container-wrapper">
+        <Dropdown
+                showClear
+                :loading="false"
+                v-model="selectedItem"
+                :options="options"
+                :optionLabel="optionLabel"
+                :placeholder="placeHolder"
+                :class="{'p-invalid':vValid && submitted}"
+                @update:modelValue="changeValue($event)"
+                optionDisabled="disableSelect"
+                @item-select="addToSelectedItems($event)"
+                @item-unselect="removeFromSelectedItems($event)"
+                :disabled="readOnly"
+        >
+
+        </Dropdown>
+
+
+    </div>
+
+
+    <span class="error-msg" v-if="error?.$error">{{
+        error?.$errors[0]?.$message }}
+    </span>
+</div>

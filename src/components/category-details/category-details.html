@@ -1,0 +1,63 @@
+<div class="category-details-wrapper">
+
+    <Card>
+        <template #header>
+
+            <div class="category-img">
+                <img src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png"  />
+
+            </div>
+        </template>
+        <template #title>
+            <div class="category-name">
+                <h3>Category name</h3>
+            </div>
+        </template>
+        <template #content>
+
+            <div class="category-parent-name">
+                <div>
+                    <span>parent : </span>
+                </div>
+                <div>
+                    <Chip label="Cat2" icon="pi pi-box"></Chip>
+                </div>
+
+
+            </div>
+
+            <div class="category-discount">
+                <div>
+                    <span>Discount: </span>
+                </div>
+                <div>
+                    <Chip label="5" icon="pi pi-percentage"></Chip>
+                </div>
+            </div>
+        </template>
+        <template #footer>
+            <div class="sub-categories-names">
+                <div class="sub-categories-title">
+                    <p>sub categories</p>
+                </div>
+                <Chip class="category-name-item" label="sub category 1" icon="pi pi-tags"></Chip>
+                <Chip class="category-name-item" label="sub category 1" icon="pi pi-tags"></Chip>
+                <Chip class="category-name-item" label="sub category 1" icon="pi pi-tags"></Chip>
+                <Chip class="category-name-item" label="sub category 1" icon="pi pi-tags"></Chip>
+            </div>
+
+            <div class="items-names">
+                <div class="items-title">
+                    <p>Items</p>
+                </div>
+                <Chip class="item-name" label="item 1" icon="pi pi-tablet"></Chip>
+                <Chip class="item-name" label="item 1" icon="pi pi-tablet"></Chip>
+                <Chip class="item-name" label="item 1" icon="pi pi-tablet"></Chip>
+                <Chip class="item-name" label="item 1" icon="pi pi-tablet"></Chip>
+            </div>
+        </template>
+
+    </Card>
+
+
+</div>

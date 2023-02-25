@@ -1,0 +1,14 @@
+.add-item-wrapper{
+    padding: 2% !important;
+}
+
+.add-item-title {
+    text-align: center;
+}
+
+.add-item-form-input{
+    margin: 1%;
+}
+.required-filed-hint{
+    color: red;
+}
