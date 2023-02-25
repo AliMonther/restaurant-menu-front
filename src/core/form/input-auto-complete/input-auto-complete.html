@@ -44,5 +44,8 @@
         </div>
 
     </div>
-
+    <span class="error-msg"
+          v-if="(submitted && selectedItems && selectedItems.length == 0)  || (isTouch && selectedItems && selectedItems.length == 0) ">
+                Value is required
+    </span>
 </div>

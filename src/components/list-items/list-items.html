@@ -1,0 +1,24 @@
+    <div class="list-items-wrapper">
+        <div class="card">
+            <OrderList v-model="items" listStyle="height:auto" dataKey="id">
+                <template #header>
+                    <h2>Items</h2>
+                </template>
+                <template #item="slotProps">
+                    <div class="product-item" @click="openModal(openItemDetailsModalIdentifier)">
+                        <div class="image-container">
+                            <img src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png" :alt="slotProps.item.name" />
+                        </div>
+                        <div class="product-list-detail">
+                            <h6 class="mb-2">{{slotProps.item.name}}</h6>
+                            <i class="pi pi-tag product-category-icon"></i>
+                        </div>
+                        <div class="product-list-action">
+                            <h6 class="mb-2">${{slotProps.item.price}}</h6>
+                        </div>
+                    </div>
+                </template>
+            </OrderList>
+        </div>
+
+    </div>

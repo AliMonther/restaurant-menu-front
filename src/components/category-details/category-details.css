@@ -1,0 +1,37 @@
+
+.p-card-header img {
+    width: 30% !important;
+
+}
+.category-parent-name{
+    display: flex;
+    justify-content: space-evenly;
+}
+.category-discount{
+    display: flex;
+    justify-content: space-evenly;
+}
+.category-name{
+    text-align: center;
+}
+.sub-categories-title{
+    text-align: center;
+}
+.items-title{
+    text-align: center;
+}
+.item-name{
+    margin-inline: 1%;
+}
+.category-name-item{
+    margin-inline: 1%;
+}
+.p-chip{
+    background: #344bc896 !important;
+    color: white;
+}
+
+.p-chip:hover{
+    background: rgba(107, 175, 255, 0.59) !important;
+    color: black;
+}

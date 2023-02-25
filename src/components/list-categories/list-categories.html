@@ -1,0 +1,23 @@
+<Carousel :value="categories" :numVisible="3" :numScroll="1" :responsiveOptions="responsiveOptions">
+    <template #header>
+        <h2>Categories</h2>
+    </template>
+    <template #item="slotProps">
+
+
+        <div class="category-item" @click="openModal(openCategoryDetailsModalIdentifier)">
+           <div class="category-img">
+               <img src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png"  />
+           </div>
+            <div class="category-name">
+               {{slotProps.data.name}}
+           </div>
+            <div class="category-date">
+                {{slotProps.data.created_at}}
+            </div>
+        </div>
+    </template>
+    <template #footer>
+        <h2></h2>
+    </template>
+</Carousel>

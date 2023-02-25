@@ -9,3 +9,6 @@
 .add-item-form-input{
     margin: 1%;
 }
+.required-filed-hint{
+    color: red;
+}

@@ -5,32 +5,78 @@
     </div>
 
     <div class="register-form">
+        <div class="register-form-input register-form-menu-name">
+            <InputText
+                    placeHolder="menu name"
+                    :value="state.menuName"
+                    :error="validator.menuName"
+                    :submitted="submitted"
+                    :vValid="validator.menuName.$invalid"
+                    @getValue="($event)=> {updateState('menuName', $event)}"
+            ></InputText>
+
+        </div>
+    </div>
+
+    <div class="register-form">
         <div class="register-form-input register-form-first-name">
-            <InputText placeHolder="first name"></InputText>
+            <InputText
+                    placeHolder="first name"
+                    :value="state.firstName"
+                    :error="validator.firstName"
+                    :submitted="submitted"
+                    :vValid="validator.firstName.$invalid"
+                    @getValue="($event)=> {updateState('firstName', $event)}"
+            ></InputText>
 
         </div>
 
         <div class="register-form-input register-form-last-name">
-            <InputText placeHolder="last name"></InputText>
+            <InputText
+                    placeHolder="last name"
+                    :value="state.lastName"
+                    :error="validator.lastName"
+                    :submitted="submitted"
+                    :vValid="validator.lastName.$invalid"
+                    @getValue="($event)=> {updateState('lastName', $event)}"
+            ></InputText>
 
         </div>
 
         <div class="register-form-input register-form-email">
-            <InputText type="email" placeHolder="email"></InputText>
+            <InputText
+                    type="email"
+                    placeHolder="email"
+                    :value="state.email"
+                    :error="validator.email"
+                    :submitted="submitted"
+                    :vValid="validator.email.$invalid"
+                    @getValue="($event)=> {updateState('email', $event)}"
+            ></InputText>
 
         </div>
 
         <div class="register-form-input register-form-password">
-            <InputPassword placeHolder="password"></InputPassword>
+            <InputPassword
+                    placeHolder="password"
+                    :value="state.password"
+                    :error="validator.password"
+                    :submitted="submitted"
+                    :vValid="validator.password.$invalid"
+                    @getValue="($event)=> {updateState('password', $event)}"
+            ></InputPassword>
 
         </div>
+
 
         <div>
             <Button
                     class="action-button"
                     label="submit"
                     icon="pi pi-user-plus"
-                    iconPos="right">
+                    iconPos="right"
+                    @click="register()"
+            >
 
             </Button>
 

@@ -1,12 +1,15 @@
 import Api from "./api";
+import {useTokenStore} from "../stores/token";
 
 export default class {
 
   constructor(prefix) {
     this.prefix = prefix;
+    this.tokenStore = new useTokenStore();
+    this.token = this.tokenStore.getToken();
   }
 
-  async index(params = {}) {
+  async index(params = {} ) {
     return await Api.get(this.prefix, this.addParams(params));
   }
 
@@ -14,8 +17,14 @@ export default class {
     return await Api.get(this.prefix + id, this.addParams(params));
   }
 
+  async getDetails( params = {}) {
+    console.log('this.addParams(params)');
+    console.log(this.addParams(params));
+    return await Api.get(this.prefix, this.addParams(params));
+  }
+
   async store(data) {
-    return await Api.post(this.prefix, data);
+    return await Api.post(this.prefix, data , {headers : this.addHeaders()});
   }
 
   async destroy(id) {
@@ -31,8 +40,16 @@ export default class {
     Object.keys(searchParams).forEach((qParam) => {
       qParams.append(qParam, searchParams[qParam]);
     });
+
     return {
       params: qParams,
+      headers : this.addHeaders()
     };
+  }
+
+  addHeaders(){
+    return {
+      authorization : 'Bearer '+this.tokenStore.getToken()
+    }
   }
 }
