@@ -13,44 +13,17 @@
 
     const { items } = storeToRefs(menuStore);
 
-    const products = ref([
-        {
-           name:'item1',
-           price:'200' ,
-        },
-        {
-            name:'item2',
-            price:'1200' ,
-        },
-        {
-            name:'item1',
-            price:'200' ,
-        },
-        {
-            name:'item2',
-            price:'1200' ,
-        },
-        {
-            name:'item1',
-            price:'200' ,
-        },
-        {
-            name:'item2',
-            price:'1200' ,
-        },
-        {
-            name:'item1',
-            price:'200' ,
-        },
-        {
-            name:'item2',
-            price:'1200' ,
-        },
-    ]);
+    const openModal = (id , identifier)=>{
 
-    const openModal = (identifier)=>{
+        setSelectedCategory(id);
         modalStore.changeState( true , identifier);
     };
+
+    const setSelectedCategory = (itemId)=>{
+
+        menuStore.setCurrentSelectedItem(itemId);
+
+    }
 
 </script>
 

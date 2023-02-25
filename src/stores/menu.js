@@ -5,6 +5,8 @@ export const useMenuStore = defineStore('menu', {
         return {
             categories : null,
             items : null,
+            currentSelectedItem : null,
+            currentSelectedCategory : null,
         }
     },
 
@@ -21,7 +23,20 @@ export const useMenuStore = defineStore('menu', {
         },
         getItems(){
             return this.items;
+        },
+        setCurrentSelectedItem(item){
+             this.currentSelectedItem = item;
+        },
+        getCurrentSelectedItem(){
+            return this.currentSelectedItem ;
+        },
+        setCurrentSelectedCategory(category){
+            this.currentSelectedCategory = category;
+        },
+        getCurrentSelectedCategory(){
+            return this.currentSelectedCategory ;
         }
+
 
     },
 });

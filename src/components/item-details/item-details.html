@@ -10,7 +10,7 @@
         </template>
         <template #title>
             <div class="item-name">
-                <h3>Item name</h3>
+                <h3>{{ item ? item.name : '' }}</h3>
             </div>
         </template>
         <template #content>
@@ -20,7 +20,7 @@
                     <span>Price: </span>
                 </div>
                 <div>
-                    <Chip label="1250" icon="pi pi-dollar"></Chip>
+                    <Chip :label="item ? item.price : 0 " icon="pi pi-dollar"></Chip>
                 </div>
             </div>
             <div class="item-discount">
@@ -28,20 +28,28 @@
                     <span>Discount: </span>
                 </div>
                 <div>
-                    <Chip label="5" icon="pi pi-percentage"></Chip>
+                    <Chip :label="item ? item.discount : 0" icon="pi pi-percentage"></Chip>
+                </div>
+            </div>
+
+            <div class="item-price-after-discount">
+                <div>
+                    <span>Price after discount: </span>
+                </div>
+                <div>
+                    <Chip :label="item ? item.price_after_discount : 0" icon="pi pi-percentage"></Chip>
                 </div>
             </div>
         </template>
 
         <template #footer>
-            <div class="categories-names">
+            <div class="categories-names" v-if="item && item.categories">
                 <div class="categories-title">
                     <p>Categories</p>
                 </div>
-                <Chip class="category-name-item" label="sub category 1" icon="pi pi-tags"></Chip>
-                <Chip class="category-name-item" label="sub category 1" icon="pi pi-tags"></Chip>
-                <Chip class="category-name-item" label="sub category 1" icon="pi pi-tags"></Chip>
-                <Chip class="category-name-item" label="sub category 1" icon="pi pi-tags"></Chip>
+                <Chip
+                        v-for="category in item.categories"
+                        class="category-name-item" :label="category.name" icon="pi pi-tags"></Chip>
             </div>
 
         </template>

@@ -42,7 +42,12 @@ export default class CategoryService extends BaseCrud{
         return result.data.data;
     }
     async getById(id){
-        return await super.show(id);
+
+        this.prefix = '/categories/';
+
+        let result =  await super.show(id);
+
+        return result.data.data;
     }
 
 }

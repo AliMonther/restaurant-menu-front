@@ -5,7 +5,7 @@
     <template #item="slotProps">
 
 
-        <div class="category-item" @click="openModal(openCategoryDetailsModalIdentifier)">
+        <div class="category-item" @click="openModal(slotProps.data.id , openCategoryDetailsModalIdentifier)">
            <div class="category-img">
                <img src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png"  />
            </div>

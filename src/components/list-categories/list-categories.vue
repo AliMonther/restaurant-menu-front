@@ -15,40 +15,7 @@
 
 
 
-    // const categories = ref([
-    //     {
-    //         name:'item1',
-    //         price:'200' ,
-    //     },
-    //     {
-    //         name:'item2',
-    //         price:'1200' ,
-    //     },
-    //     {
-    //         name:'item1',
-    //         price:'200' ,
-    //     },
-    //     {
-    //         name:'item2',
-    //         price:'1200' ,
-    //     },
-    //     {
-    //         name:'item1',
-    //         price:'200' ,
-    //     },
-    //     {
-    //         name:'item2',
-    //         price:'1200' ,
-    //     },
-    //     {
-    //         name:'item1',
-    //         price:'200' ,
-    //     },
-    //     {
-    //         name:'item2',
-    //         price:'1200' ,
-    //     },
-    // ]);
+
 
     const responsiveOptions = ref( [
         {
@@ -68,10 +35,18 @@
         }
     ]);
 
-    const openModal = (identifier)=>{
-        modalStore.changeState( true , identifier);
+    const openModal = async (id , identifier)=>{
+
+        await setSelectedCategory(id);
+
+        await modalStore.changeState( true , identifier);
     };
 
+    const setSelectedCategory = (categoryId)=>{
+
+        menuStore.setCurrentSelectedCategory(categoryId);
+
+    }
 
 </script>
 

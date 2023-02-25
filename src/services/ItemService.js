@@ -27,13 +27,18 @@ export default class ItemService extends BaseCrud{
            return false;
        }
    }
-   //
+
     async list(){
         let result = await super.index({});
         return result.data.data;
     }
-   //  async getById(id){
-   //      return await super.show(id);
-   //  }
+
+    async getById(id){
+        this.prefix = '/items/';
+
+        let result =  await super.show(id);
+
+        return result.data.data;
+    }
 
 }
