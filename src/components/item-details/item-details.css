@@ -17,6 +17,11 @@
     display: flex;
     justify-content: space-evenly;
 }
+.item-price-after-discount{
+    display: flex;
+    justify-content: space-evenly;
+
+}
 .item-name{
     text-align: center;
 }

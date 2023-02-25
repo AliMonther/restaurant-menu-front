@@ -5,7 +5,7 @@
                     <h2>Items</h2>
                 </template>
                 <template #item="slotProps">
-                    <div class="product-item" @click="openModal(openItemDetailsModalIdentifier)">
+                    <div class="product-item" @click="openModal(slotProps.item.id , openItemDetailsModalIdentifier)">
                         <div class="image-container">
                             <img src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png" :alt="slotProps.item.name" />
                         </div>

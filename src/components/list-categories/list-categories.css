@@ -2,3 +2,9 @@
     cursor: pointer;
 }
 
+.empty-sub-categories-container{
+    text-align: center;
+}
+.empty-items-container{
+    text-align: center;
+}
