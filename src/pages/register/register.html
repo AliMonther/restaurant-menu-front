@@ -19,6 +19,21 @@
     </div>
 
     <div class="register-form">
+        <div class="register-form-input register-form-menu-discount">
+            <InputText
+                    type="number"
+                    placeHolder="menu discount"
+                    :value="state.menuDiscount"
+                    :error="validator.menuDiscount"
+                    :submitted="submitted"
+                    :vValid="validator.menuDiscount.$invalid"
+                    @getValue="($event)=> {updateState('menuDiscount', $event)}"
+            ></InputText>
+
+        </div>
+    </div>
+
+    <div class="register-form">
         <div class="register-form-input register-form-first-name">
             <InputText
                     placeHolder="first name"

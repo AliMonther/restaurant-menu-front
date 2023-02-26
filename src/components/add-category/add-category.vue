@@ -25,13 +25,9 @@
             name : {
                 required : required
             },
-            parent : {
-                // required : required
-            },
-            selectedItems : {
-                // required : required,
-            },
-
+            parent : {},
+            selectedItems : {},
+            discount : {},
 
         };
     });
@@ -40,6 +36,7 @@
         name : '',
         parent : null,
         selectedItems : null,
+        discount : null,
 
     });
 
@@ -71,6 +68,7 @@
             name : state.name,
             parent : state.parent ? state.parent.id : undefined,
             items : state.selectedItems ? prepareItems() : undefined ,
+            discount : state.discount ? state.discount : undefined ,
         }
     };
 

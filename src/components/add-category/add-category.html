@@ -17,6 +17,17 @@
             ></InputText>
         </div>
 
+        <div class="add-category-form-input add-category-form-discount">
+            <InputText
+                    type="number"
+                    placeHolder="category discount"
+                    :error="validator.discount"
+                    :submitted="submitted"
+                    :vValid="validator.discount.$invalid"
+                    @getValue="($event)=> {updateState('discount', $event)}"
+            ></InputText>
+        </div>
+
         <div class="add-category-form-input add-category-form-parent">
             <DropdownInput
                     placeHolder="parent"

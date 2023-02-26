@@ -14,6 +14,7 @@
     import {useMenuStore} from "../../stores/menu";
     import { useRoute , useRouter } from "vue-router";
     import MenuService from "../../services/MenuService";
+    import AuthService from "../../services/AuthService";
 
     const openCategoryModalIdentifier = 'open-category-modal';
 
@@ -27,6 +28,8 @@
 
     const tokenStore = new useTokenStore();
 
+    const authService = new AuthService();
+
     const router = useRouter();
 
     const menuStore = new useMenuStore();
@@ -34,8 +37,11 @@
     const menuService = new MenuService();
 
     onBeforeMount(()=>{
+        if(checkAuth()){
 
-        getMenuDetails();
+            getMenuDetails();
+
+        }
 
     });
 
@@ -71,9 +77,23 @@
     };
 
     const logout = ()=>{
-        tokenStore.resetToken();
+
+        authService.logout();
+
         router.push({ name: 'welcome' });
+    };
+
+    const checkAuth = ()=>{
+        if(!localStorage.getItem('token')){
+            router.push({name : 'login'});
+            return false;
+        }
+        else{
+
+            return true
+        }
     }
+
 </script>
 
 <template scoped src="./menu-details.html"></template>

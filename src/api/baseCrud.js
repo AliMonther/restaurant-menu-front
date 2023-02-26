@@ -1,12 +1,13 @@
 import Api from "./api";
 import {useTokenStore} from "../stores/token";
-
+import TokenService from "../services/TokenService";
 export default class {
 
   constructor(prefix) {
     this.prefix = prefix;
     this.tokenStore = new useTokenStore();
     this.token = this.tokenStore.getToken();
+    this.tokenService = new TokenService();
   }
 
   async index(params = {} ) {
@@ -49,7 +50,7 @@ export default class {
 
   addHeaders(){
     return {
-      authorization : 'Bearer '+this.tokenStore.getToken()
+      authorization : 'Bearer '+this.tokenService.get()
     }
   }
 }
