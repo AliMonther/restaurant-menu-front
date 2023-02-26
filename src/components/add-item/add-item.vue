@@ -29,6 +29,8 @@
             price : {
                 required : required
             },
+            discount : {},
+
             selectedCategories : {
                 required : required,
             },
@@ -41,6 +43,7 @@
         name : '',
         price : 0,
         selectedCategories : null,
+        discount : null,
 
     });
 
@@ -74,6 +77,7 @@
         return{
             name : state.name,
             price : state.price,
+            discount : state.discount ? state.discount : undefined,
             categories : ( state.selectedCategories ? prepareSelectedCategories() : undefined ),
         }
     };

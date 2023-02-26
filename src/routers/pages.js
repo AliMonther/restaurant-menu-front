@@ -24,9 +24,11 @@ export default [
         path: "/menu",
         name: "menu",
         component : menuDetails,
+
     },
 
 ]
+
 
 
 

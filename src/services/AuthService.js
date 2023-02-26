@@ -1,14 +1,14 @@
 import BaseCrud from '../api/baseCrud'
 import {useTokenStore} from "../stores/token";
 import Swal from 'sweetalert2';
-
+import TokenService from "./TokenService";
 export default class AuthService extends BaseCrud{
 
     constructor() {
 
         super('/auth');
         this.tokenStore = new useTokenStore();
-
+        this.tokenService = new TokenService();
     }
 
     async register(data){
@@ -21,6 +21,7 @@ export default class AuthService extends BaseCrud{
 
             this.tokenStore.setToken(userResult.token);
 
+            this.tokenService.set(userResult.token);
             return true;
 
         }
@@ -42,6 +43,7 @@ export default class AuthService extends BaseCrud{
 
             this.tokenStore.setToken(userResult.token);
 
+            this.tokenService.set(userResult.token);
             return true;
 
         }
@@ -50,6 +52,10 @@ export default class AuthService extends BaseCrud{
             return false;
         }
 
+    }
+
+    logout(){
+        this.tokenService.removeToken();
     }
 
 }

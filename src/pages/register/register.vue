@@ -39,6 +39,7 @@
             menuName : {
                 required : required
             },
+            menuDiscount : {},
 
         };
     });
@@ -49,6 +50,7 @@
         email : '',
         password : '',
         menuName : '',
+        menuDiscount : null,
     });
 
     const validator = useVuelidate(rules, state);
@@ -76,6 +78,7 @@
             email : state.email,
             password : state.password,
             menu_name : state.menuName,
+            menu_discount : state.menuDiscount ? state.menuDiscount : undefined,
         }
     };
 

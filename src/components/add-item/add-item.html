@@ -36,6 +36,20 @@
             </InputText>
         </div>
 
+        <div class="add-item-form-input add-item-form-price">
+            <InputText
+                    type='number'
+                    placeHolder="item discount"
+                    :value="state.discount"
+                    :error="validator.discount"
+                    :submitted="submitted"
+                    :vValid="validator.discount.$invalid"
+                    @getValue="($event)=> {updateState('discount', $event)}"
+            >
+
+            </InputText>
+        </div>
+
         <div class="add-item-form-input add-item-form-items">
             <span class="required-filed-hint">*</span>
             <AuthCompleteInput
